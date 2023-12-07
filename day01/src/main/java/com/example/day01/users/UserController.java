@@ -13,9 +13,9 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public UserResponse getUserById(@PathVariable int id) {
         UserResponse response = new UserResponse();
-        response.setUserId(id);
-        response.setFirstName("somkiat");
-        response.setLastName("pui");
+        response.setUser_id(id);
+        response.setFirst_name("somkiat");
+        response.setLast_name("pui");
         response.setAge(40);
         return response;
     }
