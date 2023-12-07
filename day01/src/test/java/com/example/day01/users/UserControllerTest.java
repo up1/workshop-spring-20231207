@@ -27,6 +27,8 @@ class UserControllerTest {
         // Initial data for test
         MyUser user1 = new MyUser();
         user1.setFirstName("somkiat");
+        user1.setLastName("pui");
+        user1.setAge(40);
         userRepository.save(user1);
         // Test
         UserResponse result
