@@ -1,13 +1,13 @@
 package com.example.day01;
 
-public class HelloResponse {
-    private String message;
+public class HelloResponse{
+	private String message;
 
-    public String getMessage() {
-        return message;
-    }
+	public void setMessage(String message){
+		this.message = message;
+	}
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+	public String getMessage(){
+		return message;
+	}
 }
