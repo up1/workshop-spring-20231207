@@ -24,6 +24,6 @@ class UserControllerTest {
         assertEquals(1, result.getUser_id());
         assertEquals("somkiat", result.getFirst_name());
         assertEquals("pui", result.getLast_name());
-        assertEquals(400, result.getAge());
+        assertEquals(40, result.getAge());
     }
 }
