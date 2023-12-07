@@ -16,7 +16,8 @@ class HelloControllerTest {
 
     @Test
     void sayHi() {
-        HelloResponse result = restTemplate.getForObject("/hello", HelloResponse.class);
+        HelloResponse result
+                = restTemplate.getForObject("/hello", HelloResponse.class);
         assertEquals("Hello Spring Boot", result.getMessage());
     }
 }
