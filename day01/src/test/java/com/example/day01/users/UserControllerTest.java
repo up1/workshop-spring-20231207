@@ -41,7 +41,7 @@ class UserControllerTest {
     void getUserById2() {
         ResponseEntity<UserErrorResponse> result
                 = restTemplate.getForEntity("/users/2", UserErrorResponse.class);
-        assertEquals(200, result.getStatusCode().value());
+        assertEquals(404, result.getStatusCode().value());
         assertEquals("User id=2 not found", result.getBody().getMessage());
 
     }
