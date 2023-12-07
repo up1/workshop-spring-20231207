@@ -1,12 +1,25 @@
 package com.example.day01.users;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Objects;
 
-public class UserResponse{
+public class UserResponse extends Object {
 	private Integer user_id;
 	private String first_name;
 	private String last_name;
 	private Integer age;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		UserResponse response = (UserResponse) o;
+		return Objects.equals(user_id, response.user_id) && Objects.equals(first_name, response.first_name) && Objects.equals(last_name, response.last_name) && Objects.equals(age, response.age);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(user_id, first_name, last_name, age);
+	}
 
 	public Integer getUser_id() {
 		return user_id;

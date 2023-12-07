@@ -25,5 +25,13 @@ class UserControllerTest {
         assertEquals("somkiat", result.getFirst_name());
         assertEquals("pui", result.getLast_name());
         assertEquals(40, result.getAge());
+
+        // Compare object
+        UserResponse expected = new UserResponse();
+        expected.setUser_id(1);
+        expected.setFirst_name("somkiat");
+        expected.setLast_name("pui");
+        expected.setAge(40);
+        assertEquals(expected, result);
     }
 }
