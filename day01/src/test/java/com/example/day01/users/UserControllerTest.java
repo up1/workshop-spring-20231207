@@ -1,5 +1,6 @@
 package com.example.day01.users;
 
+import com.example.day01.ErrorResponse;
 import com.example.day01.HelloResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,5 +44,14 @@ class UserControllerTest {
                 = restTemplate.getForEntity("/users/2", UserErrorResponse.class);
         assertEquals(404, result.getStatusCode().value());
         assertEquals("User id=2 not found", result.getBody().getMessage());
+    }
+
+    @Test
+    @DisplayName("Invalid id case for get user by id =xyz")
+    void getUserById3() {
+        ResponseEntity<ErrorResponse> result
+                = restTemplate.getForEntity("/users/xyz", ErrorResponse.class);
+        assertEquals(400, result.getStatusCode().value());
+        assertEquals("Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: \"xyz\"", result.getBody().getMessage());
     }
 }
