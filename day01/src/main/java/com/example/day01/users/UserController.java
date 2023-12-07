@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Autowired
     private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/users/{id}")
     @ResponseStatus(HttpStatus.OK)
