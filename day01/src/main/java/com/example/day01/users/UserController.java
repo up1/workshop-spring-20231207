@@ -12,6 +12,11 @@ public class UserController {
     @GetMapping("/users/{id}")
     @ResponseStatus(HttpStatus.OK)
     public UserResponse getUserById(@PathVariable int id) {
+        if(id == 2) {
+            // TODO :: User id =2 not found
+            throw new UserNotFoundException("User id=2 not found");
+        }
+        // Success = 200
         UserResponse response = new UserResponse();
         response.setUser_id(id);
         response.setFirst_name("somkiat");
