@@ -16,14 +16,13 @@ public class UserService {
         Optional<MyUser> user =  userRepository.findById(userId);
         if (user.isEmpty()) {
             throw new UserNotFoundException("User id=%d not found".formatted(userId));
-        } else {
-            UserResponse response = new UserResponse();
-            response.setUser_id(userId);
-            response.setFirst_name("somkiat");
-            response.setLast_name("pui");
-            response.setAge(40);
-            return response;
         }
+        UserResponse response = new UserResponse();
+        response.setUser_id(userId);
+        response.setFirst_name(user.get().getFirstName());
+        response.setLast_name(user.get().getLastName());
+        response.setAge(user.get().getAge());
+        return response;
     }
 
 }
