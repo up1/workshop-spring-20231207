@@ -29,4 +29,12 @@ class UserRepositoryTest {
         assertEquals("somkiat", user.get().getFirstName());
     }
 
+    @Test
+    @DisplayName("Not found with get user by id = 2")
+    public void case02(){
+        // Test
+        Optional<MyUser> user =  userRepository.findById(2);
+        assertFalse(user.isPresent());
+    }
+
 }
