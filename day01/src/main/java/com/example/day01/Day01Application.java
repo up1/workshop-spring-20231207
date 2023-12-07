@@ -1,6 +1,5 @@
 package com.example.day01;
 
-import com.example.day01.users.UserResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

@@ -1,7 +1,6 @@
 package com.example.day01.users;
 
 import com.example.day01.ErrorResponse;
-import com.example.day01.HelloResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class UserControllerTest {
@@ -20,6 +19,7 @@ class UserControllerTest {
 
     @Autowired
     private UserRepository userRepository;
+
 
     @Test
     @DisplayName("success case for get user by id =1")

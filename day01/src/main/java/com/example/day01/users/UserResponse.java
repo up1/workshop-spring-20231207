@@ -1,10 +1,8 @@
 package com.example.day01.users;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Objects;
 
-public class UserResponse extends Object {
+public class UserResponse {
 	private Integer user_id;
 	private String first_name;
 	private String last_name;
