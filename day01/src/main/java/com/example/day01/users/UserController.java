@@ -42,4 +42,13 @@ public class UserController {
         return userResponse;
     }
 
+    @PostMapping("/users/form")
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserResponse createNewUserWithForm(@ModelAttribute UserRequest userRequest) {
+        UserResponse userResponse = new UserResponse();
+        userResponse.setFirst_name(userRequest.getFirst_name());
+        userResponse.setLast_name(userRequest.getLast_name());
+        return userResponse;
+    }
+
 }
