@@ -30,6 +30,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
+    @ResponseStatus(HttpStatus.CREATED)
     public UserResponse createNewUser(@RequestBody UserRequest userRequest) {
         UserResponse userResponse = new UserResponse();
         userResponse.setFirst_name(userRequest.getFirst_name());
