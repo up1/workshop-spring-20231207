@@ -12,11 +12,13 @@ import java.util.Optional;
 @Gateway
 public class PostGateway {
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+    private final String externalApiUrl;
 
-    @Value("${external_url}")
-    private String externalApiUrl;
+    public PostGateway(RestTemplate restTemplate, @Value("${external_url}") String externalApiUrl) {
+        this.restTemplate = restTemplate;
+        this.externalApiUrl = externalApiUrl;
+    }
 
     public Optional<PostResponse> getById(int id) {
         String url = externalApiUrl + "/posts/" + id;
