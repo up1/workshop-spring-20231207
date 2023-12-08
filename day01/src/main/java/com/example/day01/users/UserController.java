@@ -3,6 +3,7 @@ package com.example.day01.users;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,10 @@ public class UserController {
                                      @RequestParam(defaultValue = "10") int size) {
         System.out.println("Page=" + page);
         System.out.println("Size=" + size);
-        return null;
+        List<UserResponse> results = new ArrayList<>();
+        results.add(new UserResponse());
+        results.add(new UserResponse());
+        return results;
     }
 
     @PostMapping("/users")
