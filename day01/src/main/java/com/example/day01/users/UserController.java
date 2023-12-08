@@ -1,5 +1,6 @@
 package com.example.day01.users;
 
+import io.micrometer.observation.annotation.Observed;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @Observed(name = "user-controller", contextualName = "getUserById")
     public UserResponse getUserById(@PathVariable int id) {
         return userService.getById(id);
     }

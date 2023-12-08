@@ -1,5 +1,6 @@
 package com.example.day01.users;
 
+import io.micrometer.observation.annotation.Observed;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ public class UserService {
     }
 
     @Transactional
+    @Observed(name = "user-service", contextualName = "getById")
     public UserResponse getById(int userId) {
         Optional<MyUser> user =  userRepository.findById(userId);
         if (user.isEmpty()) {
