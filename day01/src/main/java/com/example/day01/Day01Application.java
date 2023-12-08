@@ -61,7 +61,9 @@ public class Day01Application implements CommandLineRunner {
                 .collect(Collectors.toList());
 
         splitUpNames.forEach(
-                name -> System.out.printf("Inserting customer record for %s %s%n", name[0], name[1]));
+                name -> {
+                    System.out.printf("Inserting customer record for %s %s%n", name[0], name[1]);
+                });
 
         jdbcTemplate.batchUpdate("INSERT INTO customers(first_name, last_name) VALUES (?,?)", splitUpNames);
 
