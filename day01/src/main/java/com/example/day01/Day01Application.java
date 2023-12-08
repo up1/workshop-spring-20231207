@@ -35,6 +35,12 @@ public class Day01Application implements CommandLineRunner {
         ConfigurableApplicationContext context
                 = SpringApplication.run(Day01Application.class, args);
 
+        String[] names = context.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(context.getBean(name));
+        }
+        System.out.println("# of beans=" + context.getBeanDefinitionCount());
+
 //		UserResponse ur1 = (UserResponse)context.getBean("userResponse");
 //		ur1.setUser_id(1);
 //
